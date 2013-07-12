@@ -7,6 +7,7 @@
 
 	$( '#viewPage' ).live( 'pageshow',function(event){
 		$('#viewImg').attr('src',snapshotUrl);
+		//$('#viewImg').attr('width',$(window).width()+'px');
 		motion();
 	});
 	
