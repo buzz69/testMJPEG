@@ -8,7 +8,7 @@
 	$( '#viewPage' ).live( 'pageshow',function(event){
 		$('#viewImg').attr('src',snapshotUrl);
 		//$('#viewImg').attr('width',$(window).width()+'px');
-		navigator.notification.alert("Start motion");
+		//navigator.notification.alert("Start motion");
 		motion();
 	});
 	
