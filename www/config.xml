@@ -52,11 +52,6 @@
 	<preference name="splash-screen-duration" value="2000" />
 	<preference name="load-url-timeout" value="15000" />
 	
-	<preference name="loadingDialog" value="testMJPEG, Démarrage..." />			<!-- Loading message au demarrage -->
-	<preference name="loadingPageDialog" value="testMJPEG, Chargement..." />		<!-- Loading message entre les pages -->
-	
-	<preference name="backgroundColor" value="0xff38c0f4" />
-	
     <!-- Plugins can also be added here. -->
     <!--
         <gap:plugin name="Example" />
