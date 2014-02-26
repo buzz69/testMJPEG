@@ -30,20 +30,20 @@
 	}
 	*/
 	function motion(){
-			//randomNum=Date.now();
-			//tmpUrl=flux+'&time='+randomNum;
-			tmpUrl=flux;
+			randomNum=Date.now();
+			tmpUrl=flux+'&time='+randomNum;
 			tmpIMG=new Image();
 			tmpIMG.src=tmpUrl;
 			tmpIMG.onload= function(){
 				//$('#infos').append("Picture loaded !<br>");
-					//ratio=this.width/this.height;
-					//largeur=Math.ceil(window.innerWidth-(window.innerWidth/10));	//largeur ecran -10%
-					//hauteur=Math.ceil(largeur/ratio);
-					//$('#viewImg').attr('width',largeur);
-					//$('#viewImg').attr('height',hauteur);
+					ratio=this.width/this.height;
+					largeur=Math.ceil(window.innerWidth-(window.innerWidth/10));	//largeur ecran -10%
+					hauteur=Math.ceil(largeur/ratio);
+					$('#viewImg').attr('width',largeur);
+					$('#viewImg').attr('height',hauteur);
 					//$('#infos').append("Drawing canva<br>");
 					ctx.drawImage(tmpIMG, 0, 0, this.width, this.height, 0, 0, 320, 240);
+					tmpIMG=null;
 					setTimeout("motion()",motionInterval);
 			};
 			tmpIMG.onerror=function(){
