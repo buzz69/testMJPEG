@@ -8,10 +8,10 @@
 	});
 
 	$( '#viewPage' ).live( 'pageshow',function(event){
-		//$('#viewImg').attr('src',snapshotUrl);
-		//$('#viewImg').attr('width',$(window).width()+'px');
-		navigator.notification.alert("Start motion");
+		//navigator.notification.alert("Start motion");
+		$('#infos').append("Page loaded<br>");
 		ctx = document.getElementById('viewImg').getContext('2d');
+		$('#infos').append("Canva registred<br>");
 		motion();
 	});
 	
@@ -29,12 +29,14 @@
 	}
 	*/
 	function motion(){
+		$('#infos').append("Start motion: "+flux+"<br>");
 			randomNum=Date.now();
 			tmpUrl=flux+'&time='+randomNum;
 			tmpIMG=new Image();
 			tmpIMG.src=tmpUrl;
 			//console.log("load image: ("+flux+")");
 			tmpIMG.onload= function(){
+				$('#infos').append("Picture loaded !<br>");
 				//console.log("image loaded: ("+tmpIMG.src+")");
 					ratio=this.width/this.height;
 					largeur=Math.ceil(window.innerWidth-(window.innerWidth/10));	//largeur ecran -10%
@@ -42,11 +44,13 @@
 					$('#viewImg').attr('width',largeur);
 					$('#viewImg').attr('height',hauteur);
 					//console.log('source: '+this.width+'x'+this.height+' - destination: '+largeur+'x'+hauteur);
+					$('#infos').append("Drawing canva<br>");
 					ctx.drawImage(tmpIMG, 0, 0, this.width, this.height, 0, 0, largeur, hauteur);
 					setTimeout("motion()",motionInterval);
 			};
 			tmpIMG.onerror=function(){
 				//console.log("load error: ("+tmpIMG.src+")");
+				$('#infos').append("Picture load failed !<br>");
 				motion();
 			};
 	}
