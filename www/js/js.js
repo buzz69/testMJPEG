@@ -42,7 +42,7 @@
 					$('#viewImg').attr('width',largeur);
 					$('#viewImg').attr('height',hauteur);
 					//$('#infos').append("Drawing canva<br>");
-					ctx.drawImage(tmpIMG, 0, 0, this.width, this.height, 0, 0, 320, 240);
+					ctx.drawImage(tmpIMG, 0, 0, this.width, this.height, 0, 0, largeur, hauteur);
 					tmpIMG=null;
 					setTimeout("motion()",motionInterval);
 			};
