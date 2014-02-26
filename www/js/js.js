@@ -30,6 +30,7 @@
 	}
 	*/
 	function motion(){
+			navigator.app.clearCache();
 			randomNum=Date.now();
 			tmpUrl=flux+'&time='+randomNum;
 			tmpIMG=new Image();
